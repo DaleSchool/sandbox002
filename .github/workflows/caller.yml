@@ -4,4 +4,4 @@ on:
 
 jobs:
   reuse:
-    uses: ./.github/workflows/reusable
+    uses: ./.github/workflows/called.yml
