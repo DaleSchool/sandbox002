@@ -1,0 +1,7 @@
+name: Our Main
+on:
+  push:
+
+jobs:
+  reuse:
+    uses: ./.github/workflows/reusable
