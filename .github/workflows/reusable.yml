@@ -33,5 +33,5 @@ jobs:
     steps:
       - run: |
           echo "notify"
-          echo "${{ inputs.notify }}"
-          echo "${{ inputs.notify }}"
+          echo ${{ inputs.notify }}
+          echo ${{ github.event.inputs.notify }}
