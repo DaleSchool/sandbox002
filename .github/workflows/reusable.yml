@@ -33,4 +33,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Notify
-      - run: echo "deploying"
+        run: echo "deploying"
