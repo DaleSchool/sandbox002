@@ -4,18 +4,18 @@ on:
 
 jobs:
   deploy-dev:
-    uses: ./.github/workflows/resuable.yml
+    uses: ./.github/workflows/reusable.yml
     with:
       env: dev
 
   deploy-qa:
     needs: [deploy-dev]
-    uses: ./.github/workflows/resuable.yml
+    uses: ./.github/workflows/reusable.yml
     with:
       env: qa
 
   deploy-prod:
     needs: [deploy-qa]
-    uses: ./.github/workflows/resuable.yml
+    uses: ./.github/workflows/reusable.yml
     with:
       env: prod
