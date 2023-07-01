@@ -3,19 +3,19 @@ on:
   push:
 
 jobs:
-  build-dev:
+  deploy-dev:
     uses: ./.github/workflows/called.yml
     with:
       env: dev
 
-  build-qa:
-    needs: [build-dev]
+  deploy-qa:
+    needs: [deploy-dev]
     uses: ./.github/workflows/called.yml
     with:
       env: qa
 
-  build-prod:
-    needs: [build-qa]
+  deploy-prod:
+    needs: [deploy-qa]
     uses: ./.github/workflows/called.yml
     with:
       env: prod
