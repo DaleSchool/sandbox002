@@ -1,10 +1,21 @@
-name: Our Caller 1
+name: Our Caller
 on:
   push:
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/called.yml
-      - run: echo test
+  build-dev:
+    uses: ./.github/workflows/called.yml
+    with:
+      env: dev
+
+  build-qa:
+    needs: [build-dev]
+    uses: ./.github/workflows/called.yml
+    with:
+      env: qa
+
+  build-prod:
+    needs: [build-qa]
+    uses: ./.github/workflows/called.yml
+    with:
+      env: prod
