@@ -1,11 +1,13 @@
 name: Our Called
 on:
   workflow_call:
+    inputs:
+      env:
+        type: string
+        default: dev
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: echo ci
-      - run: echo build
+      - run: echo "running in ${{ inputs.env }}"
