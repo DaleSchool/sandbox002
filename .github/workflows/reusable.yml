@@ -27,6 +27,8 @@ jobs:
         run: echo 'build'
       - name: Deploy
         run: echo "deploying in ${{ inputs.env }}"
-      - name: Notify
-        if: inputs.notify
-        run: echo 'format'
+  notify:
+    if: ${{ github.event.inputs.notify }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'notify'
