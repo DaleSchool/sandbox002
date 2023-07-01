@@ -19,3 +19,4 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       env: prod
+      notify: true
