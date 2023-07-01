@@ -3,9 +3,8 @@ on:
   push:
 
 jobs:
-  common:
-    uses: ./.github/workflows/called.yml
   test:
     runs-on: ubutu-latest
     steps:
+      - uses: ./.github/workflows/called.yml
       - run: echo test
