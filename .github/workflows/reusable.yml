@@ -1,0 +1,17 @@
+name: Our Reusable
+on:
+  workflow_call:
+    inputs:
+      env:
+        type: string
+        default: dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo 'ci'
+      - run: echo 'test'
+      - run: echo 'build'
+      - run: echo "deploying in ${{ inputs.env }}"
