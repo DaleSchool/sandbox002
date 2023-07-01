@@ -1,21 +1,21 @@
-name: Our Caller
+name: Our Deployment
 on:
   push:
 
 jobs:
   deploy-dev:
-    uses: ./.github/workflows/called.yml
+    uses: ./.github/workflows/resuable.yml
     with:
       env: dev
 
   deploy-qa:
     needs: [deploy-dev]
-    uses: ./.github/workflows/called.yml
+    uses: ./.github/workflows/resuable.yml
     with:
       env: qa
 
   deploy-prod:
     needs: [deploy-qa]
-    uses: ./.github/workflows/called.yml
+    uses: ./.github/workflows/resuable.yml
     with:
       env: prod
