@@ -4,14 +4,29 @@ on:
     inputs:
       env:
         type: string
-        default: dev
+        required: true
+      notify:
+        type: boolean
+        default: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: echo 'ci'
-      - run: echo 'test'
-      - run: echo 'build'
-      - run: echo "deploying in ${{ inputs.env }}"
+      - name: Check out
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: echo 'ci'
+      - name: Format
+        run: echo 'format'
+      - name: Lint
+        run: echo 'lint'
+      - name: Test
+        run: echo 'test'
+      - name: Build
+        run: echo 'build'
+      - name: Deploy
+        run: echo "deploying in ${{ inputs.env }}"
+      - name: Notify
+        if: inputs.notify
+        run: echo 'format'
