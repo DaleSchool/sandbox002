@@ -16,19 +16,22 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: echo 'ci'
+        run: echo "ci"
       - name: Format
-        run: echo 'format'
+        run: echo "format"
       - name: Lint
-        run: echo 'lint'
+        run: echo "lint"
       - name: Test
-        run: echo 'test'
+        run: echo "test"
       - name: Build
-        run: echo 'build'
+        run: echo "build"
       - name: Deploy
         run: echo "deploying in ${{ inputs.env }}"
   notify:
-    if: ${{ github.event.inputs.notify }}
+    if: inputs.notify
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'notify'
+      - run: |
+          echo "notify"
+          echo "${{ inputs.notify }}"
+          echo "${{ inputs.notify }}"
