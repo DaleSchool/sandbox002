@@ -15,8 +15,8 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-      - name: Install dependencies
-        run: echo "ci"
+      - name: Install
+        run: echo "install"
       - name: Format
         run: echo "format"
       - name: Lint
@@ -31,7 +31,5 @@ jobs:
     if: inputs.notify
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "notify"
-          echo ${{ inputs.notify }}
-          echo ${{ github.event.inputs.notify }}
+      - name: Notify
+      - run: echo "deploying"
