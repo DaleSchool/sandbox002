@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "ref = ${{ inputs.ref }}"
+      - run: echo "sha = ${{ github.sha }}"
       - uses: actions/checkout@v4
         with:
           ref: ${{ inputs.ref }}
