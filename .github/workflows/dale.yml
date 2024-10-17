@@ -8,3 +8,4 @@ jobs:
     steps:
       - run: echo "sha = ${{ github.sha }}"
       - uses: actions/checkout@v4
+      - run: cat .github/workflows/dale.yml
