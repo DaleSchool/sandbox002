@@ -1,0 +1,16 @@
+name: Our Dale
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        type: string
+        required: true
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ref = ${{ inputs.ref }}"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
