@@ -1,16 +1,11 @@
 name: Our Dale
 on:
   workflow_dispatch:
-    inputs:
-      ref:
-        type: string
-        required: true
 
 jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "ref = ${{ inputs.ref }}"
+      - run: echo "sha = ${{ github.sha }}"
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.ref }}
+      - run: cat .github/workflows/dale.yml
