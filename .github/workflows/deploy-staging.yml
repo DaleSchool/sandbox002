@@ -1,0 +1,10 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "sha = ${{ github.sha }}"
+      - uses: actions/checkout@v4
+      - run: cat .github/workflows/dale.yml
