@@ -1,4 +1,3 @@
-name: deply-staging
 on:
   workflow_dispatch:
 
